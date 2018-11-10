@@ -38,7 +38,7 @@ defmodule Phoenix.HTML.SimplifiedHelpers.Mixfile do
   defp deps do
     [
       {:timex, "~> 3.3 or ~> 3.2"},
-      {:ecto, "~> 2.2 or ~> 2.1"},
+      {:ecto, "~> 3.0"},
       {:gettext, ">= 0.11.0"},
       {:phoenix, "~> 1.3", only: :test},
       {:ex_doc, ">= 0.0.0", only: :dev},

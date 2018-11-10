@@ -14,10 +14,6 @@ defmodule Phoenix.HTML.SimplifiedHelpers.TimeAgoInWordsTest do
     assert time_ago_in_words(:os.system_time(:seconds)) == "less than 5 seconds"
   end
 
-  test "time_ago_in_words with ecto" do
-    assert time_ago_in_words(Ecto.DateTime.utc()) == "less than 5 seconds"
-  end
-
   test "time_ago_in_words normally in English" do
     Gettext.put_locale(Phoenix.HTML.SimplifiedHelpers.Gettext, "en")
     assert time_ago_in_words(Timex.now()) == "less than 5 seconds"
@@ -26,11 +22,6 @@ defmodule Phoenix.HTML.SimplifiedHelpers.TimeAgoInWordsTest do
   test "time_ago_in_words epoch in English" do
     Gettext.put_locale(Phoenix.HTML.SimplifiedHelpers.Gettext, "en")
     assert time_ago_in_words(:os.system_time(:seconds)) == "less than 5 seconds"
-  end
-
-  test "time_ago_in_words with ecto in English" do
-    Gettext.put_locale(Phoenix.HTML.SimplifiedHelpers.Gettext, "en")
-    assert time_ago_in_words(Ecto.DateTime.utc()) == "less than 5 seconds"
   end
 
   test "time_ago_in_words normally in Japanese" do
@@ -43,11 +34,6 @@ defmodule Phoenix.HTML.SimplifiedHelpers.TimeAgoInWordsTest do
     assert time_ago_in_words(:os.system_time(:seconds)) == "5秒以内"
   end
 
-  test "time_ago_in_words with ecto in Japanese" do
-    Gettext.put_locale(Phoenix.HTML.SimplifiedHelpers.Gettext, "ja")
-    assert time_ago_in_words(Ecto.DateTime.utc()) == "5秒以内"
-  end
-
   test "time_ago_in_words normally in Español" do
     Gettext.put_locale(Phoenix.HTML.SimplifiedHelpers.Gettext, "es")
     assert time_ago_in_words(Timex.now()) == "menos de 5 segundos"
@@ -58,11 +44,6 @@ defmodule Phoenix.HTML.SimplifiedHelpers.TimeAgoInWordsTest do
     assert time_ago_in_words(:os.system_time(:seconds)) == "menos de 5 segundos"
   end
 
-  test "time_ago_in_words with ecto in Español" do
-    Gettext.put_locale(Phoenix.HTML.SimplifiedHelpers.Gettext, "es")
-    assert time_ago_in_words(Ecto.DateTime.utc()) == "menos de 5 segundos"
-  end
-
   test "time_ago_in_words normally in Chinese" do
     Gettext.put_locale(Phoenix.HTML.SimplifiedHelpers.Gettext, "zh")
     assert time_ago_in_words(Timex.now()) == "5秒以内"
@@ -71,11 +52,6 @@ defmodule Phoenix.HTML.SimplifiedHelpers.TimeAgoInWordsTest do
   test "time_ago_in_words epoch in Chinese" do
     Gettext.put_locale(Phoenix.HTML.SimplifiedHelpers.Gettext, "zh")
     assert time_ago_in_words(:os.system_time(:seconds)) == "5秒以内"
-  end
-
-  test "time_ago_in_words with ecto in Chinese" do
-    Gettext.put_locale(Phoenix.HTML.SimplifiedHelpers.Gettext, "zh")
-    assert time_ago_in_words(Ecto.DateTime.utc()) == "5秒以内"
   end
 
   test "distance_of_time_in_words advance one month" do
